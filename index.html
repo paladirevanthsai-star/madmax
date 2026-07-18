@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Bevara Ramu | DevOps & Cloud</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+        name="description"
+        content="Portfolio of Ramu Bevara - DevOps & Cloud Trainer and Developer"
+    />
+    <style>
+        :root {
+            --bg: #193c5b;
+            --bg-alt: #020617;
+            --card: #111c34;
+            --accent: #42bef3;
+            --accent-soft: rgba(65, 189, 242, 0.12);
+            --text-main: #e5e7eb;
+            --text-muted: #9ca3af;
+            --border-subtle: #1f2937;
+            --radius-lg: 18px;
+            --radius-xl: 24px;
+            --shadow-soft: 0 18px 45px rgba(5, 9, 20, 0.9);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                sans-serif;
+            background: radial-gradient(circle at top left, #1f2937 0, #020617 45%, #000 100%);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 32px 18px 48px;
+        }
+
+        /* Header / Hero */
+        header {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+
+        .brand {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .name {
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+
+        .role {
+            font-size: 0.98rem;
+            color: var(--accent);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+
+        nav {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            font-size: 0.85rem;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            color: var(--text-muted);
+            background: rgba(15, 23, 42, 0.6);
+        }
+
+        nav a:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(15, 23, 42, 0.9);
+        }
+
+        /* Hero card */
+        .hero {
+            background: radial-gradient(circle at top, #1f2937 0, #020617 55%);
+            border-radius: var(--radius-xl);
+            padding: 26px 22px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(148, 163, 184, 0.18);
+            display: grid;
+            grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.6fr);
+            gap: 24px;
+            margin-bottom: 26px;
+        }
+
+        .hero-main h1 {
+            font-size: 1.9rem;
+            margin-bottom: 6px;
+        }
+
+        .hero-main p {
+            font-size: 0.98rem;
+            color: var(--text-muted);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 14px 0 10px;
+        }
+
+        .tag {
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            color: #e0f2fe;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.9rem;
+            padding: 8px 14px;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+            color: #0b1120;
+            font-weight: 600;
+        }
+
+        .btn-outline {
+            border-color: rgba(148, 163, 184, 0.5);
+            color: var(--text-main);
+            background: rgba(15, 23, 42, 0.8);
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .hero-side {
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-subtle);
+            background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.4));
+            padding: 16px 16px 14px;
+            font-size: 0.88rem;
+        }
+
+        .hero-side h3 {
+            font-size: 0.92rem;
+            margin-bottom: 4px;
+        }
+
+        .contact-grid {
+            display: grid;
+            gap: 7px;
+            margin-top: 6px;
+        }
+
+        .contact-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .contact-label {
+            opacity: 0.8;
+        }
+
+        .contact-value {
+            text-align: right;
+        }
+
+        .contact-value a {
+            color: var(--accent);
+            word-break: break-all;
+        }
+
+        /* Section layouts */
+        main {
+            display: grid;
+            grid-template-columns: minmax(0, 1.9fr) minmax(0, 1.3fr);
+            gap: 24px;
+        }
+
+        .section {
+            margin-bottom: 22px;
+            padding: 16px 16px 14px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-subtle);
+            background: rgba(15, 23, 42, 0.9);
+        }
+
+        .section h2 {
+            font-size: 1.05rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .section h2 span {
+            color: var(--accent);
+        }
+
+        .pill {
+            display: inline-block;
+            font-size: 0.78rem;
+            padding: 3px 9px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(148, 163, 184, 0.35);
+            color: var(--text-muted);
+        }
+
+        /* Experience & Projects */
+        .item {
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed rgba(31, 41, 55, 0.9);
+        }
+
+        .item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+
+        .item-title {
+            font-weight: 600;
+        }
+
+        .item-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .item ul {
+            margin-top: 6px;
+            padding-left: 18px;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .item ul li {
+            margin-bottom: 4px;
+        }
+
+        /* Skills */
+        .skills-group {
+            margin-bottom: 10px;
+        }
+
+        .skills-group h3 {
+            font-size: 0.88rem;
+            margin-bottom: 4px;
+            color: #e5e7eb;
+        }
+
+        .skill-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .skill {
+            font-size: 0.8rem;
+            padding: 3px 9px;
+            border-radius: 999px;
+            border: 1px solid rgba(75, 85, 99, 0.9);
+            color: var(--text-muted);
+            background: rgba(15, 23, 42, 0.85);
+        }
+
+        /* Certifications / misc */
+        .list {
+            list-style: disc;
+            padding-left: 18px;
+            font-size: 0.86rem;
+            color: var(--text-muted);
+        }
+
+        .list li {
+            margin-bottom: 4px;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(15, 23, 42, 0.9);
+        }
+
+        @media (max-width: 880px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .hero {
+                grid-template-columns: 1fr;
+            }
+            main {
+                grid-template-columns: 1fr;
+            }
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .contact-value {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div class="brand">
+                <div class="role">Technical Trainer & Software Developer · DevOps & Cloud</div>
+                <div class="name">Ramu Bevara</div>
+            </div>
+            <nav>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="hero-main">
+                <h1>Technical Trainer & Software Developer at GradStreet</h1>
+                <p>
+                    I am a self-motivated trainer and developer, currently working at
+                    <strong>GradStreet</strong>, mentoring students in DevOps, Java and modern
+                    cloud technologies. I love building CI/CD pipelines, containerized
+                    deployments and teaching real-world DevOps workflows.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Java & Spring Boot</span>
+                    <span class="tag">CI/CD · Jenkins</span>
+                    <span class="tag">Docker & Kubernetes</span>
+                    <span class="tag">AWS & GCP</span>
+                    <span class="tag">Trainer · Mentor</span>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary">Contact Me</a>
+                    <a href="https://github.com/Ram89788" target="_blank" class="btn btn-outline">
+                        View GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/ramu-bevara-71b888239" target="_blank" class="btn btn-outline">
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+
+            <aside class="hero-side" id="contact">
+                <h3>Contact</h3>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">
+                            <a href="mailto:ramukottururk@gmail.com">ramukottururk@gmail.com</a>
+                        </span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Phone</span>
+                        <span class="contact-value">
+                            <a href="tel:+918978801174">+91 8978801174</a>
+                        </span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">LinkedIn</span>
+                        <span class="contact-value">
+                            <a href="https://linkedin.com/in/ramu-bevara-71b888239" target="_blank">
+                                /ramu-bevara-71b888239
+                            </a>
+                        </span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">GitHub</span>
+                        <span class="contact-value">
+                            <a href="https://github.com/Ram89788" target="_blank">
+                                github.com/Ram89788
+                            </a>
+                        </span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Current Company</span>
+                        <span class="contact-value">
+                            <a href="https://www.gradstreet.co.in/" target="_blank">
+                                GradStreet
+                            </a>
+                        </span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Location</span>
+                        <span class="contact-value">Hyderabad, Telangana, India</span>
+                    </div>
+                </div>
+            </aside>
+        </section>
+
+        <main>
+            <!-- LEFT COLUMN -->
+            <div>
+                <section id="experience" class="section">
+                    <h2><span>Experience</span></h2>
+
+                    <!-- Current Job at GradStreet -->
+                    <div class="item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Technical Trainer & Software Developer</div>
+                                <div class="item-meta">
+                                    GradStreet · Hyderabad, Telangana  
+                                    <br>
+                                    <a href="https://www.gradstreet.co.in/" target="_blank" style="color:#38bdf8;">
+                                        www.gradstreet.co.in
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item-meta">2024 – Present</div>
+                        </div>
+                        <ul>
+                            <li>Training engineering graduates on Java, Spring Boot, DevOps, Git, GitHub, CI/CD and cloud concepts.</li>
+                            <li>Developing backend modules, automation tasks and internal tools for GradStreet.</li>
+                            <li>Conducting bootcamps, hands-on labs, coding assessments, mock interviews and real-time project support.</li>
+                            <li>Mentoring students to build industry-ready portfolios and deploy applications on cloud platforms.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Freelance Experience -->
+                    <div class="item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Freelance Trainer</div>
+                                <div class="item-meta">
+                                    Coign · VN Tech · Echo Brains · Hyderabad, Telangana
+                                </div>
+                            </div>
+                            <div class="item-meta">Sep 2022 – 2024</div>
+                        </div>
+                        <ul>
+                            <li>Trained 1,000+ students in DevOps, Java, AWS Cloud, CI/CD pipelines and version control systems.</li>
+                            <li>Delivered workshops covering Git, GitHub Actions, Jenkins, Docker and deployment best practices.</li>
+                            <li>Designed hands-on lab environments for real-time DevOps project execution.</li>
+                            <li>Guided students on software development practices, GitHub project management and interview prep.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="projects" class="section">
+                    <h2><span>Projects</span></h2>
+
+                    <div class="item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Employee Management System</div>
+                                <div class="item-meta">Oct 2023 – Dec 2023</div>
+                            </div>
+                            <span class="pill">Java · CI/CD · AWS</span>
+                        </div>
+                        <ul>
+                            <li>Implemented full CRUD functionality using Java and MySQL.</li>
+                            <li>Used Git, GitHub, Maven and Jenkins to build an automated CI/CD pipeline.</li>
+                            <li>Containerized the application with Docker and deployed on AWS (EC2/ECS).</li>
+                        </ul>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Automated Deployment Pipeline for Java Application</div>
+                                <div class="item-meta">Mar 2024 – Jul 2024</div>
+                            </div>
+                            <span class="pill">Jenkins · Docker · K8s</span>
+                        </div>
+                        <ul>
+                            <li>Designed CI/CD pipeline using Git/GitHub, Maven and Jenkins.</li>
+                            <li>Automated builds, tests and deployments to AWS (ECR, ECS, EC2).</li>
+                            <li>Authored Kubernetes manifests and validated them on Minikube/GKE.</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div>
+                <section id="skills" class="section">
+                    <h2><span>Skills</span></h2>
+
+                    <div class="skills-group">
+                        <h3>Programming & Backend</h3>
+                        <div class="skill-chips">
+                            <span class="skill">Core Java</span>
+                            <span class="skill">Spring Boot</span>
+                            <span class="skill">REST APIs</span>
+                            <span class="skill">Maven</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h3>Version Control & CI</h3>
+                        <div class="skill-chips">
+                            <span class="skill">Git</span>
+                            <span class="skill">GitHub</span>
+                            <span class="skill">Jenkins</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h3>Containers & Orchestration</h3>
+                        <div class="skill-chips">
+                            <span class="skill">Docker</span>
+                            <span class="skill">AWS ECR</span>
+                            <span class="skill">Kubernetes (K8s)</span>
+                            <span class="skill">Helm</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h3>Cloud Platforms</h3>
+                        <div class="skill-chips">
+                            <span class="skill">AWS EC2</span>
+                            <span class="skill">AWS ECS</span>
+                            <span class="skill">AWS S3</span>
+                            <span class="skill">AWS IAM · VPC</span>
+                            <span class="skill">GCP Compute Engine</span>
+                            <span class="skill">GKE</span>
+                            <span class="skill">Cloud Storage</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h3>Databases & Practices</h3>
+                        <div class="skill-chips">
+                            <span class="skill">MySQL</span>
+                            <span class="skill">MS SQL Server</span>
+                            <span class="skill">CI/CD</span>
+                            <span class="skill">Artifact Versioning</span>
+                            <span class="skill">Environment Promotion</span>
+                            <span class="skill">Monitoring & Logging</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="certifications" class="section">
+                    <h2><span>Certifications</span> & More</h2>
+
+                    <h3 style="font-size:0.9rem; margin-bottom:4px;">Certifications</h3>
+                    <ul class="list">
+                        <li>AWS Cloud Practitioner — Amazon Web Services (Jul 2023)</li>
+                        <li>Salesforce Developer Internship — SmartBridge (Aug 2023 – Oct 2023)</li>
+                        <li>Java Programming — Udemy (Feb 2023 – Apr 2023)</li>
+                        <li>Python Fundamentals — Infosys Springboard (Oct 2022 – Nov 2022)</li>
+                    </ul>
+
+                    <h3 style="font-size:0.9rem; margin:10px 0 4px;">Achievements</h3>
+                    <ul class="list">
+                        <li>Participated in a 24-hour Hackathon at college.</li>
+                        <li>District-level Kabaddi winner during Diploma.</li>
+                        <li>Achieved AWS Cloud Practitioner certification.</li>
+                    </ul>
+
+                    <h3 style="font-size:0.9rem; margin:10px 0 4px;">Languages</h3>
+                    <ul class="list">
+                        <li>English</li>
+                        <li>Telugu</li>
+                    </ul>
+
+                    <h3 style="font-size:0.9rem; margin:10px 0 4px;">Hobbies</h3>
+                    <ul class="list">
+                        <li>Learning new technologies (currently Kubernetes and GCP).</li>
+                        <li>Playing cricket.</li>
+                        <li>Watching regional films and tech documentaries.</li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            © <span id="year"></span> Ramu Bevara · Built with HTML & CSS · Hosted on GitHub Pages
+        </footer>
+    </div>
+
+    <script>
+        // Set current year in footer
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
